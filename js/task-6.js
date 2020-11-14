@@ -1,7 +1,11 @@
 const inputForm = document.getElementById('validation-input');
+console.log(inputForm.dataset.length);
 
 inputForm.addEventListener('blur', onInputBlur)
 
 function onInputBlur() {
-    inputForm.value.length === 6 ? inputForm.setAttribute('class', 'valid') : inputForm.setAttribute('class', 'invalid')
+    if (inputForm.value.length === Number(inputForm.dataset.length)) {
+        inputForm.setAttribute('class', 'valid')
+    } else { inputForm.setAttribute('class', 'invalid')
+    }
 }

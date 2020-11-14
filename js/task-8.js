@@ -12,7 +12,7 @@ formDestroy.addEventListener('click', () => {
 function createBoxes() {
     let boxHeight = 30;
     let boxWidth = 30;  
-    
+    let boxArray = [];
     for (let i = 1; i <= inputForm.value; i++){
         boxHeight += 10
         boxWidth += 10
@@ -22,8 +22,9 @@ function createBoxes() {
         newBox.style.height = boxHeight + 'px'
         newBox.style.backgroundColor = '#' + (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase()
         newBox.setAttribute('class', 'innerBox')
-        inicialBox.append(newBox)
+        boxArray.push(newBox)
+        
     }
-    
+  inicialBox.append(...boxArray)  
 }
 

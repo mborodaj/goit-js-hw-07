@@ -4,5 +4,5 @@ let label = document.getElementById('name-output');
 inputForm.addEventListener('input', onInputChange);
 
 function onInputChange() {
-    inputForm.value !== "" ? label.textContent = inputForm.value : label.textContent = "незнакомец";
+    label.textContent = inputForm.value !== '' ? inputForm.value : "незнакомец"
 }
